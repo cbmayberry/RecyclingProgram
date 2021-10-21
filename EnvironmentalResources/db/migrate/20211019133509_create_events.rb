@@ -1,10 +1,10 @@
-class CreateResources < ActiveRecord::Migration[6.0]
+class CreateEvents < ActiveRecord::Migration[6.0]
   def change
-    create_table 'resources' do |t|
-      t.string 'title'
-      t.string 'location'
+    create_table 'events' do |t|
+      t.string 'name'
       t.text 'description'
-      
+      t.datetime 'date'
+      t.references 'resource'
 
       # Add fields that let Rails automatically keep track
       # of when movies are added or modified:
